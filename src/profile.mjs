@@ -23,7 +23,7 @@ const digest = x => typeof x === 'string' && /^sha256:[a-f0-9]{64}$/.test(x);
 const amount = x => typeof x === 'string' && /^(0|[1-9][0-9]{0,39})$/.test(x);
 const money = x => keys(x, ['asset', 'unit', 'amount'])
   && text(x.asset) && text(x.unit) && amount(x.amount);
-const instant = x => typeof x === 'string' && Number.isFinite(Date.parse(x))
+const instant = x => typeof x === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(x) && Number.isFinite(Date.parse(x))
   && new Date(x).toISOString() === x;
 const namedVersion = x => keys(x, ['id', 'version']) && text(x.id) && text(x.version);
 const codeVersion = x => keys(x, ['version', 'digest']) && text(x.version) && digest(x.digest);
@@ -73,7 +73,9 @@ export async function verifyReceipt({ token, trustedKeys, expected, now, claim =
       : layer('UNSUPPORTED', `This signature profile does not prove ${String(claim)}`),
     limitations: ['Issuer assertions do not prove execution, quality, data rights or payment settlement.'],
   };
-  if (!validBinding(expected) || !instant(now) || !Array.isArray(trustedKeys)) {
+  if (!validBinding(expected) || !instant(now) || !Array.isArray(trustedKeys)
+    || !trustedKeys.every(k => record(k) && text(k.kid) && text(k.issuer)
+      && (!Object.hasOwn(k, 'revoked') || typeof k.revoked === 'boolean'))) {
     result.credential = layer('FAIL', 'Invalid verifier configuration or incomplete expected context');
     return result;
   }
@@ -117,6 +119,10 @@ export async function verifyReceipt({ token, trustedKeys, expected, now, claim =
   }
   if (now < credential.validFrom || now >= credential.validUntil) {
     result.credential = layer('FAIL', 'Credential not yet valid or expired');
+    return result;
+  }
+  if (credential.credentialSubject.serviceReceipt.observedAt > now) {
+    result.credential = layer('FAIL', 'Receipt observation is in the future');
     return result;
   }
   if (key.validFrom && (!instant(key.validFrom) || now < key.validFrom)) {

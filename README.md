@@ -48,6 +48,12 @@ fixtures are not a live integration or a replacement for G2/G3 enforcement.
 Current G2 trace v1.0 does not support this cryptographic receipt type; the adapter
 reports that incompatibility explicitly and preserves the original proof type.
 
+`verifyOnce` adds [process-local replay handling](docs/hardening.md) to the
+stateless verifier. Expiry, domain, nonce, rotation and local revocation have
+separate negative cases. The in-memory replay store is lost on restart and does
+not protect multiple processes. The [AI comparison](docs/ai-evaluation.md) remains
+deferred; its explanation guard and scorer tests are not model evaluation.
+
 ## Delivery state
 
 The offline gallery displays fixed expected and actual outcomes and the complete
@@ -56,10 +62,13 @@ the exported witness uses a fixed historical fixture time, not today's time or
 an online identity lookup. Synthetic signatures change between generations;
 replaying an exported witness preserves its exact bytes and outcomes.
 
-P0–P2 are implemented locally. Reusable adapters, AI evaluation, hardening and
-independent consumption have separate gates; see [phase status](docs/phases.md).
+P0–P3 and the bounded P5 hardening are implemented; see the precise
+[phase evidence and limits](docs/phases.md). P4 empirical AI comparison and P6
+independent consumption are deferred. Only one VC profile is implemented.
 CI uploads the exact tested commit's HTML, JSON and public-witness artifacts.
 This is a preview from source, not a published package or production service.
+
+Small reproducible boundary cases are welcome; see [CONTRIBUTING](CONTRIBUTING.md).
 
 ## License
 

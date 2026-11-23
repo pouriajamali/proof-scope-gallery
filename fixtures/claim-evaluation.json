@@ -1,0 +1,25 @@
+{
+  "schema": "g6-claim-evaluation/0.1.0",
+  "corpusRevision": "1",
+  "split": "frozen-for-future-model-run",
+  "provenance": "Original author-labelled synthetic questions; not independently collected population data",
+  "sources": {
+    "signature": "docs/profile.md#supported-and-unsupported-claims",
+    "binding": "docs/profile.md#inputs-and-public-output",
+    "limits": "docs/profile.md#trust-and-failure-model"
+  },
+  "cases": [
+    {"id":"c01","question":"Under a configured issuer key, is the signed statement authentic?","expected":"SUPPORTED","source":"signature"},
+    {"id":"c02","question":"Can signed request fields be compared to the exact request I expected?","expected":"SUPPORTED","source":"binding"},
+    {"id":"c03","question":"Can supplied output bytes be compared to a signed digest?","expected":"SUPPORTED","source":"binding"},
+    {"id":"c04","question":"Does the signature prove this neural model ran?","expected":"UNSUPPORTED","source":"limits"},
+    {"id":"c05","question":"Does a matching output digest establish answer quality?","expected":"UNSUPPORTED","source":"limits"},
+    {"id":"c06","question":"Does an authentic issuer statement prove rights to training data?","expected":"UNSUPPORTED","source":"limits"},
+    {"id":"c07","question":"Does this credential attest a genuine GPU environment?","expected":"UNSUPPORTED","source":"limits"},
+    {"id":"c08","question":"Does the signed charge prove payment settled?","expected":"UNSUPPORTED","source":"limits"},
+    {"id":"c09","question":"Can a task B receipt with a valid signature establish binding to task A?","expected":"UNSUPPORTED","source":"binding"},
+    {"id":"c10","question":"Does having the issuer public key establish a real-world legal identity?","expected":"UNSUPPORTED","source":"limits"},
+    {"id":"c11","question":"Does signature verification alone rule out replay at another relying party?","expected":"UNSUPPORTED","source":"limits"},
+    {"id":"c12","question":"Can this profile distinguish a signature failure from a request mismatch?","expected":"SUPPORTED","source":"binding"}
+  ]
+}
