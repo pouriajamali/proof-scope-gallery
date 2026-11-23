@@ -65,7 +65,10 @@ replaying an exported witness preserves its exact bytes and outcomes.
 P0–P3 and the bounded P5 hardening are implemented; see the precise
 [phase evidence and limits](docs/phases.md). P4 empirical AI comparison and P6
 independent consumption are deferred. Only one VC profile is implemented.
-CI uploads the exact tested commit's HTML, JSON and public-witness artifacts.
+Hosted CI is now prohibited by owner instruction; use local tests only. The old
+workflow is archived outside the runnable workflow directory. Earlier CI links
+and downloadable artifacts are historical evidence for their named commits;
+see the [current CI policy](docs/ci-policy.md).
 This is a preview from source, not a published package or production service.
 
 Small reproducible boundary cases are welcome; see [CONTRIBUTING](CONTRIBUTING.md).

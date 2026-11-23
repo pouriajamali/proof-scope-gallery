@@ -5,7 +5,8 @@ existing profile. Include public synthetic input, an explicit expected outcome
 for each layer, actual CLI output, Node version and the exact source commit.
 Never include real signing private keys, private model input, employer data or
 unlicensed datasets. Test locally with `npm ci --ignore-scripts`, `npm test`, the
-gallery witness replay and the standalone consumer example.
+gallery witness replay and the standalone consumer example. Hosted CI is
+disabled by current owner policy; do not trigger it through publication or reruns.
 
 A profile change needs its trust assumptions, negative cases, independent expected
 outcomes, pinned verifier dependency and migration examples. New cryptography,
@@ -19,6 +20,7 @@ public witness is more useful than an unsupported assurance claim.
 
 Maintenance: inspect upstream jose security/release notes before upgrades; pin
 the reviewed version/integrity; run all affected profile, replay and consumer
-tests and exact-commit CI. Do not report a dependency bump as a performance or
+local tests and inspect CI prevention before any publication. Historical CI is
+not permission to start a new run. Do not report a dependency bump as a performance or
 security improvement without corresponding evidence. Consumer adoption and
 maintenance effort are unknown until measured; this repository provides no SLA.
