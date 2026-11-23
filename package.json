@@ -1,0 +1,15 @@
+{
+  "name": "proof-scope-gallery",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An offline gallery separating real signature checks, service receipt binding, and unsupported claims.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.14.0" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/cli.mjs",
+    "gallery": "node src/cli.mjs --html artifacts/gallery.html"
+  },
+  "dependencies": { "jose": "6.2.18" }
+}

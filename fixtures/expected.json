@@ -1,0 +1,10 @@
+[
+  {"id":"valid","signature":"PASS","credential":"PASS","binding":"PASS","scope":"SUPPORTED","accepted":true},
+  {"id":"tampered-output","signature":"FAIL","credential":"NOT_RUN","binding":"NOT_RUN","scope":"SUPPORTED","accepted":false},
+  {"id":"wrong-request","signature":"PASS","credential":"PASS","binding":"FAIL","scope":"SUPPORTED","accepted":false},
+  {"id":"wrong-model","signature":"PASS","credential":"PASS","binding":"FAIL","scope":"SUPPORTED","accepted":false},
+  {"id":"unsupported-quality","signature":"PASS","credential":"PASS","binding":"PASS","scope":"UNSUPPORTED","accepted":false},
+  {"id":"unsupported-execution","signature":"PASS","credential":"PASS","binding":"PASS","scope":"UNSUPPORTED","accepted":false},
+  {"id":"output-bytes-match","signature":"PASS","credential":"PASS","binding":"PASS","scope":"SUPPORTED","accepted":true},
+  {"id":"output-bytes-wrong","signature":"PASS","credential":"PASS","binding":"FAIL","scope":"SUPPORTED","accepted":false}
+]
