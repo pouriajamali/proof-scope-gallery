@@ -18,6 +18,7 @@ jobs:
       - run: npm test
       - run: node src/cli.mjs --html artifacts/gallery.html --json artifacts/gallery.json --witness artifacts/public-witness.json
       - run: node src/cli.mjs --replay artifacts/public-witness.json
+      - run: node examples/consume-receipt.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: gallery-${{ github.sha }}

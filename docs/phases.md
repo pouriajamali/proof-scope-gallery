@@ -4,8 +4,8 @@
 | --- | --- | --- |
 | G6 P0 | VERIFIED | Existing VC verifier selected; [claim matrix](profile.md) |
 | G6 P1 | VERIFIED locally | Real Ed25519 signature check, independent native cross-check; 21 tests at P1 |
-| G6 P2 | Local verification in progress | 8 offline gallery scenarios, public-only replay, CLI/HTML and CI workflow; remote CI not yet verified |
-| G6 P3 / CMP-06 | PLANNED | Versioned service adapters for payment-result and authorized intent |
+| G6 P2 | VERIFIED | 23 tests and 8/8 scenarios; [CI 45190733281](https://github.com/pouriajamali/proof-scope-gallery/actions/runs/45190733281) on commit 336d5588ef319cc192f07e0b8d5fea4077213318 |
+| G6 P3 / CMP-06 P2/P3 | In local verification | Versioned G6-owned service/intent/payment adapters; current G2 wire type unsupported, independent adoption pending |
 | G6 P4 / CMP-06 P4 | PLANNED | Held-out AI classification vs deterministic checker; actual run, cost and attribution required |
 | G6 P5 / CMP-06 P5 | PLANNED | Replay/domain/expiry/rotation and separate crypto/binding negatives |
 | G6 P6 / CMP-06 P6 | PLANNED | Independent consumer before second profile; maintenance and contribution |

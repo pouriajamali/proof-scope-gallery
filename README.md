@@ -35,6 +35,19 @@ public credential; raw private input is absent, but hashes do not provide privac
 for low entropy inputs. The caller supplies the expected context, clock and
 pinned issuer keys. A compromised trusted issuer can sign false statements.
 
+## Consume a receipt
+
+```sh
+node examples/consume-receipt.mjs
+```
+
+The [versioned consumer boundary](docs/consumer-contract.md) keeps payment
+observations, missing/failed output, bound signed output and an offline permission
+check separate. It uses synthetic uppercase text, not a model or GPU. G6-owned
+fixtures are not a live integration or a replacement for G2/G3 enforcement.
+Current G2 trace v1.0 does not support this cryptographic receipt type; the adapter
+reports that incompatibility explicitly and preserves the original proof type.
+
 ## Delivery state
 
 The offline gallery displays fixed expected and actual outcomes and the complete
