@@ -7,7 +7,7 @@
 | G6 P2 | VERIFIED | 23 tests and 8/8 scenarios; [CI 45190733281](https://github.com/pouriajamali/proof-scope-gallery/actions/runs/45190733281) on commit 336d5588ef319cc192f07e0b8d5fea4077213318 |
 | G6 P3 / CMP-06 P2/P3 | VERIFIED in offline boundary scope | 34/34 tests; [CI 45191740989](https://github.com/pouriajamali/proof-scope-gallery/actions/runs/45191740989); current G2 wire type unsupported and independent adoption deferred |
 | G6 P4 / CMP-06 P4 | DEFERRED | [Protocol and guard](ai-evaluation.md) prepared; actual model/runtime/budget and empirical outputs absent |
-| G6 P5 / CMP-06 P5 | VERIFIED locally, remote CI pending | 47/47 tests; process-local replay/domain/expiry/rotation and separate crypto/binding negatives; no durable or multi-process claim |
+| G6 P5 / CMP-06 P5 | VERIFIED in bounded profile | 47/47 tests; [CI 45192953569](https://github.com/pouriajamali/proof-scope-gallery/actions/runs/45192953569) on commit 36f2cb3cb08e5a594cc0b34e7568f60d5cebdaa8; process-local replay/domain/expiry/rotation and separate crypto/binding negatives; no durable or multi-process claim |
 | G6 P6 / CMP-06 P6 | DEFERRED | [Independent consumer gate](independent-consumption.md) unmet; contribution/maintenance docs prepared; no second profile |
 
 CMP-06 P0/P1 are covered by the claim matrix and signature/binding fixtures.
